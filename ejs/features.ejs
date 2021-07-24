@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+</head>
+<body>
+<h1><%= title %></h1>
+<div id="app">
+    <div>
+        <span v-if="!servers">Spinner</span>
+        <ul v-for="server in servers" v-else>
+            <li>
+                {{server.name}} <strong>{{server.status}}</strong>
+                <button @click="remove(server.id)">Remove</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="/app.js"></script>
+</body>
+</html>
